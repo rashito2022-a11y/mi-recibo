@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recibo Café Internet LT</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="recibo-container" id="recibo">
+      <!-- LOGO -->
+      <div class="logo">
+        <img src="logo.png" alt="Logo Café Internet LT" />
+      </div>
+
+      <!-- TÍTULO -->
+      <h2 id="tituloRecibo">RECIBO #0479</h2>
+
+      <!-- INFORMACIÓN -->
+      <div class="info-pair">
+        <div class="label">Dirección:</div>
+        <div class="value">CALLE 106 # 42C-16</div>
+      </div>
+      <div class="info-pair">
+        <div class="label">Teléfono:</div>
+        <div class="value">3005572049</div>
+      </div>
+
+      <hr class="linea-divisora" />
+
+      <div class="info-pair">
+        <div class="label">Fecha:</div>
+        <div class="value" id="fechaActual"></div>
+      </div>
+      <div class="info-pair">
+        <div class="label">Cliente:</div>
+        <div class="value">
+          <input
+            type="text"
+            id="cliente"
+            value="Wiemar Bedoya"
+            class="input-no-border"
+          />
+        </div>
+      </div>
+
+      <!-- DESCRIPCIÓN: textarea (edición) + div (visualización/impresión) -->
+      <div class="info-pair descripcion-section">
+        <div class="label descripcion-label">Descripción:</div>
+        <div class="value descripcion-value">
+          <textarea id="descripcion" class="input-no-border" rows="1">
+Trabajos varios, impresiones, escaneados, formatos de contratos realizados, envío por correo electrónico.</textarea
+          >
+          <div
+            id="descripcionDisplay"
+            class="descripcion-display"
+            aria-hidden="true"
+          ></div>
+        </div>
+      </div>
+
+      <div class="info-pair">
+        <div class="label">Número de celular:</div>
+        <div class="value">3206673629</div>
+      </div>
+      <div class="info-pair">
+        <div class="label">Valor Total:</div>
+        <div class="value">
+          <input
+            type="text"
+            id="total"
+            value="$55.000"
+            class="input-no-border"
+          />
+        </div>
+      </div>
+
+      <hr class="linea-divisora" />
+
+      <p class="footer">CAFÉ INTERNET LT</p>
+
+      <hr class="linea-divisora-final" />
+
+      <div class="actions no-print">
+        <button id="botonImprimir">Imprimir</button>
+        <button id="descargarPDF">Descargar</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
